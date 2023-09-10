@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        <h1>Registro</h1>
+        <input type="text" name="name" placeholder="Nombre Completo" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{3,15}$" title="Un nombre de usuario apropiado debe comenzar con una letra, contener letras, números, guiones bajos y puntos, y tener entre 3 y 15 caracteres de longitud" required>
+        <input type="text" name="telefono" placeholder="Telefono" value="" maxlength="9" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" required>  
+        <label >
+            ¿Cuentas con correo electronico?
+            <input type="checkbox" name="yes">Si
+            <input type="checkbox" name="no">No
+        </label>
+        <input type="email" name="email" placeholder="Correo electronico">
+        <button  type="submit" name="register">Enviar</button> 
+    </form>
+
+    <?php 
+    include("register.php");
+    ?>
+
+</body>
+</html>
